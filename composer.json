@@ -1,0 +1,23 @@
+{
+  "name": "divdax/easybill",
+  "description": "Laravel Package to use the easybill.de REST API",
+  "keywords": ["laravel", "package", "easybill", "REST", "API"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Heiko Klingele",
+      "email": "divdax@gmail.com",
+      "homepage": "http://heikoklingele.de",
+      "role": "Photographer, Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DivDax\\Easybill\\": "src/"
+    }
+  },
+  "require": {
+    "illuminate/support": "~5",
+    "guzzlehttp/guzzle": "^6.2"
+  }
+}
