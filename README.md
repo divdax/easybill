@@ -105,6 +105,6 @@ $doc->done();
 Easybill::updateDocument($id, ['status' => 'DONE']);
 ```
 
-###Contributing
+### Contributing
 
 If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.
