@@ -70,11 +70,19 @@ class easybill
         return $this->request->put('customers/'.$id, $attributes);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function deleteCustomer($id)
     {
         return $this->request->delete('customers/'.$id);
     }
 
+    /**
+     * @param null $attributes
+     * @return $this
+     */
     public function createDocument($attributes = null)
     {
         $this->document = $this->request->post('documents', ['form_params' => $attributes]);
@@ -82,19 +90,48 @@ class easybill
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
     public function done()
     {
         return $this->request->put('documents/' . $this->document->id . '/done');
     }
 
+    /**
+     * @return mixed
+     */
     public function cancel()
     {
         return $this->request->post('documents/' . $this->document->id . '/cancel');
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function getDocument($id)
+    {
+        return $this->request->get('documents/'.$id);
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function deleteDocument($id)
     {
         return $this->request->delete('documents/' . $id);
+    }
+
+    /**
+     * @param $id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function updateDocument($id, array $attributes)
+    {
+        return $this->request->put('documents/' . $id, ['form_params' => $attributes]);
     }
 
     /**
@@ -106,6 +143,10 @@ class easybill
         return $this->request->post('documents/' . $this->document->id . '/send/' . $type);
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function getPDF($id)
     {
         return $this->request->get('documents/' . $id . '/pdf');

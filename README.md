@@ -5,13 +5,16 @@
 This Laravel Package is a very basic and untested version!
 
 ### Installation
+
 ```
 composer require divdax/easybill
 ```
 
 ### Laravel
+
 Add the ServiceProvider and Facade in ```config/app.php```
-```
+
+```php
 'providers' => [
     ...
     DivDax\Easybill\EasybillServiceProvider::class,
@@ -29,15 +32,18 @@ php artisan vendor:publish --provider="DivDax\Easybill\EasybillServiceProvider"
 ```
 
 ### Configuration
+
 Add your easybill.de api key to your ```.env```
+
 ```
 EASYBILL_API_KEY=xxxxxx
 ```
 
 ### Usage
+
 I only implemented some basic api calls
 
-```
+```php
 // Search Customer with exact match
 Easybill::searchCustomer([
     'company_name' => 'Company Name'
@@ -94,7 +100,11 @@ $doc = Easybill::createDocument([
 
 // Finish Document (set auto created document number)
 $doc->done();
+
+// Update Document
+Easybill::updateDocument($id, ['status' => 'DONE']);
 ```
 
 ###Contributing
+
 If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.

@@ -30,15 +30,15 @@ class Request
 
     public function post($url, $attributes = null)
     {
-        $url = $this->build_url_query($url);
         $data = $this->client->post($url, $attributes)->getBody();
         return json_decode($data);
     }
 
     public function put($url, $attributes = null)
     {
-        $url = $this->build_url_query($url);
         $data = $this->client->put($url, $attributes)->getBody();
+//        var_dump($data);
+//        die();
         return json_decode($data);
     }
 
