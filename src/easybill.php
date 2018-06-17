@@ -27,7 +27,15 @@ class easybill
      */
     public function __construct($api_key)
     {
-        $this->request = new Request($this->api_endpoint, $api_key);
+        $this->request = $this->constructRequest($api_key);
+    }
+
+    /**
+     * @param $api_key
+     * @return Request
+     */
+    protected function constructRequest($api_key) {
+        return new Request($this->api_endpoint, $api_key);
     }
 
     /**
