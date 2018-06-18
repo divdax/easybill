@@ -3,6 +3,7 @@
 namespace DivDax\Easybill\Http;
 
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 
 class Request
 {
@@ -18,34 +19,45 @@ class Request
         ]);
     }
 
+    /**
+     * intercept response of all requests.
+     * parse json response
+     * @param ResponseInterface $response
+     * @return mixed|ResponseInterface
+     */
+    protected function interceptResponse($response) {
+        if($response->getHeader('Content-Type')[0] === 'application/json') {
+            return json_decode($response->getBody());
+        }
+        return $response;
+    }
+
     public function get($url, $attributes = null)
     {
         $params = $attributes
             ? '?' . $this->build_url_query($attributes)
             : '';
 
-        $data = $this->client->get($url . $params)->getBody();
-        return json_decode($data);
+        $response = $this->client->get($url . $params);
+        return $this->interceptResponse($response);
     }
 
     public function post($url, $attributes = null)
     {
-        $data = $this->client->post($url, $attributes)->getBody();
-        return json_decode($data);
+        $response = $this->client->post($url, $attributes);
+        return $this->interceptResponse($response);
     }
 
     public function put($url, $attributes = null)
     {
-        $data = $this->client->put($url, $attributes)->getBody();
-//        var_dump($data);
-//        die();
-        return json_decode($data);
+        $response = $this->client->put($url, $attributes);
+        return $this->interceptResponse($response);
     }
 
     public function delete($url, $attributes = null)
     {
-        $data = $this->client->delete($url, $attributes)->getBody();
-        return json_decode($data);
+        $response = $this->client->delete($url, $attributes);
+        return $this->interceptResponse($response);
     }
 
     private function build_url_query($url)
