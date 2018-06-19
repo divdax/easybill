@@ -1,16 +1,20 @@
-## easybill.de REST API v1
+# easybill.de REST API v1
 
 **Unofficial** Laravel Package to use the [easybill.de REST API](https://www.easybill.de/api).
 
 This Laravel Package is a very basic and untested version!
 
-### Installation
+## Installation
 
 ```
 composer require divdax/easybill
 ```
 
-### Laravel
+## Laravel 5.5, 5.6
+
+No need to register any providers / aliases. Thanks to Laravels Package Discovery.
+
+## Laravel 5.4
 
 Add the ServiceProvider and Facade in ```config/app.php```
 
@@ -26,12 +30,7 @@ Add the ServiceProvider and Facade in ```config/app.php```
 ];
 ```
 
-Publish config file:
-```
-php artisan vendor:publish --provider="DivDax\Easybill\EasybillServiceProvider"
-```
-
-### Configuration
+## Configuration
 
 Add your easybill.de api key to your ```.env```
 
@@ -39,7 +38,7 @@ Add your easybill.de api key to your ```.env```
 EASYBILL_API_KEY=xxxxxx
 ```
 
-### Usage
+## Usage
 
 I only implemented some basic api calls
 
@@ -105,6 +104,6 @@ $doc->done();
 Easybill::updateDocument($id, ['status' => 'DONE']);
 ```
 
-### Contributing
+## Contributing
 
 If you find an issue, or have a better way to do something, feel free to open an issue or a pull request.

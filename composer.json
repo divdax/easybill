@@ -3,6 +3,10 @@
   "description": "Laravel Package to use the easybill.de REST API",
   "keywords": ["laravel", "package", "easybill", "REST", "API"],
   "license": "MIT",
+  "support": {
+    "issues": "https://github.com/divdax/easybill/issues",
+    "source": "https://github.com/divdax/easybill"
+  },
   "authors": [
     {
       "name": "Heiko Klingele",
@@ -19,5 +23,18 @@
   "require": {
     "illuminate/support": "~5",
     "guzzlehttp/guzzle": "^6.2"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DivDax\\Easybill\\EasybillServiceProvider"
+      ],
+      "aliases": {
+        "Easybill": "DivDax\\Easybill\\Facade\\Easybill"
+      }
+    }
   }
 }

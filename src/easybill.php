@@ -39,6 +39,7 @@ class easybill
     public function searchCustomer(array $parameters)
     {
         $this->response = $this->request->get('customers', $parameters);
+        
         return $this->response;
     }
 

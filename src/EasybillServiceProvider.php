@@ -8,9 +8,11 @@ class EasybillServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        $this->publishes([
-            __DIR__ . '/config/easybill.php' => config_path('easybill.php'),
-        ], 'config');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/config/easybill.php' => config_path('easybill.php'),
+            ], 'config');
+        }
     }
 
     public function register()
@@ -19,7 +21,10 @@ class EasybillServiceProvider extends ServiceProvider
             if(config('easybill.api_key') === null) {
                 throw new \Exception('Missing easybill.de API-Key in config!');
             }
+
             return new easybill(config('easybill.api_key'));
         });
+
+        $this->mergeConfigFrom(__DIR__ . '/config/easybill.php', 'easybill');
     }
 }
