@@ -75,23 +75,18 @@ $doc = Easybill::createDocument([
             'number' => '123', // article number
             'description' => 'Positionsbeschreibung 1',
             'quantity' => 1,
-            'single_price_net' => 10 * 100,
+            'single_price_net' => 10 * 100, // cent
             'vat_percent' => 19
         ],
         [
-            'type' => 'POSITION',
-            'number' => '321',
-            'description' => 'Positionsbeschreibung 2',
-            'quantity' => 1,
-            'single_price_net' => 20 * 100,
-            'vat_percent' => 19
+            'type' => 'TEXT',
+            'description' => 'Text only',
         ],
         [
             'type' => 'POSITION',
-            'number' => '213',
             'description' => 'Positionsbeschreibung 3',
             'quantity' => 1,
-            'single_price_net' => 30 * 100,
+            'single_price_net' => 20 * 100,
             'vat_percent' => 19
         ],
     ],
