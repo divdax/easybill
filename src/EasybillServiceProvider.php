@@ -17,8 +17,8 @@ class EasybillServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton('easybill', function() {
-            if(config('easybill.api_key') === null) {
+        $this->app->singleton('easybill', function () {
+            if (config('easybill.api_key') === null) {
                 throw new \Exception('Missing easybill.de API-Key in config!');
             }
 

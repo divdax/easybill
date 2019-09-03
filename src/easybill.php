@@ -6,12 +6,12 @@ use DivDax\Easybill\Http\Request;
 
 /**
  * easybill.de API-Documentation:
+ *
  * @see https://www.easybill.de/api
- 
+ *
  * JSON API-Description:
  * @see https://api.easybill.de/rest/v1/swagger.json
  */
-
 class easybill
 {
     public $api_endpoint = 'https://api.easybill.de/rest/v1/';
@@ -24,6 +24,7 @@ class easybill
 
     /**
      * easybill constructor.
+     *
      * @param $api_key
      */
     public function __construct($api_key)
@@ -33,9 +34,11 @@ class easybill
 
     /**
      * @param $api_key
+     *
      * @return Request
      */
-    protected function constructRequest($api_key) {
+    protected function constructRequest($api_key)
+    {
         return new Request($this->api_endpoint, $api_key);
     }
 
@@ -43,17 +46,19 @@ class easybill
      * Search easybill customers by given get parameters
      *
      * @param array $parameters
+     *
      * @return array
      */
     public function searchCustomer(array $parameters)
     {
         $this->response = $this->request->get('customers', $parameters);
-        
+
         return $this->response;
     }
 
     /**
      * @param null $attributes
+     *
      * @return mixed
      */
     public function createCustomer($attributes = null)
@@ -63,34 +68,38 @@ class easybill
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function getCustomer($id)
     {
-        return $this->request->get('customers/'.$id);
+        return $this->request->get('customers/' . $id);
     }
 
     /**
      * @param $id
      * @param array $attributes
+     *
      * @return mixed
      */
     public function updateCustomer($id, array $attributes)
     {
-        return $this->request->put('customers/'.$id, $attributes);
+        return $this->request->put('customers/' . $id, $attributes);
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function deleteCustomer($id)
     {
-        return $this->request->delete('customers/'.$id);
+        return $this->request->delete('customers/' . $id);
     }
 
     /**
      * @param null $attributes
+     *
      * @return $this
      */
     public function createDocument($attributes = null)
@@ -118,15 +127,17 @@ class easybill
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function getDocument($id)
     {
-        return $this->request->get('documents/'.$id);
+        return $this->request->get('documents/' . $id);
     }
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function deleteDocument($id)
@@ -137,6 +148,7 @@ class easybill
     /**
      * @param $id
      * @param array $attributes
+     *
      * @return mixed
      */
     public function updateDocument($id, array $attributes)
@@ -146,6 +158,7 @@ class easybill
 
     /**
      * @param string $type email, fax, post
+     *
      * @return mixed
      */
     public function send($type = 'email')
@@ -155,6 +168,7 @@ class easybill
 
     /**
      * @param $id
+     *
      * @return mixed
      */
     public function getPDF($id)
@@ -189,7 +203,7 @@ class easybill
      */
     public function getSepaPayment($id)
     {
-        return $this->request->get('sepa-payments/'.$id);
+        return $this->request->get('sepa-payments/' . $id);
     }
 
     /**
@@ -200,7 +214,7 @@ class easybill
      */
     public function updateSepaPayment($id, array $attributes)
     {
-        return $this->request->put('sepa-payments/'.$id, $attributes);
+        return $this->request->put('sepa-payments/' . $id, $attributes);
     }
 
     /**
@@ -210,6 +224,6 @@ class easybill
      */
     public function deleteSepaPayment($id)
     {
-        return $this->request->delete('sepa-payments/'.$id);
+        return $this->request->delete('sepa-payments/' . $id);
     }
 }
