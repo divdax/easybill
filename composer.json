@@ -2,6 +2,7 @@
   "name": "divdax/easybill",
   "description": "Laravel Package to use the easybill.de REST API",
   "keywords": ["laravel", "package", "easybill", "REST", "API"],
+  "type": "package",
   "license": "MIT",
   "support": {
     "issues": "https://github.com/divdax/easybill/issues",
