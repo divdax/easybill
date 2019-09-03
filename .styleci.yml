@@ -1,0 +1,10 @@
+preset: recommended
+risky: false
+
+enabled:
+  - concat_with_spaces
+  - phpdoc_link_to_see
+  
+disabled:
+  - concat_without_spaces
+  - phpdoc_short_description
