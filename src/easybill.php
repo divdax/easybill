@@ -6,9 +6,10 @@ use DivDax\Easybill\Http\Request;
 
 /**
  * easybill.de API-Documentation:
- * https://www.easybill.de/api/
+ * @see https://www.easybill.de/api
+ 
  * JSON API-Description:
- * https://api.easybill.de/rest/v1/swagger.json
+ * @see https://api.easybill.de/rest/v1/swagger.json
  */
 
 class easybill
