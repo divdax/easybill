@@ -1,4 +1,5 @@
 # easybill.de REST API v1
+[![StyleCI](https://github.styleci.io/repos/90948270/shield?branch=master)](https://github.styleci.io/repos/90948270)
 
 **Unofficial** Laravel Package to use the [easybill.de REST API](https://www.easybill.de/api).
 
@@ -10,9 +11,9 @@ This Laravel Package is a very basic and untested version!
 composer require divdax/easybill
 ```
 
-## Laravel 5.5, 5.6
+## Laravel 5.5+
 
-No need to register any providers / aliases. Thanks to Laravels Package Discovery.
+No need to register any providers / aliases. Thanks to [Laravels Package Discovery](https://laravel.com/docs/6.0/packages#package-discovery).
 
 ## Laravel 5.4
 
