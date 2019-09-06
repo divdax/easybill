@@ -1,5 +1,9 @@
 # easybill.de REST API v1
+
+[![Latest Stable Version](https://poser.pugx.org/divdax/easybill/v/stable?format=flat-square)](https://packagist.org/packages/divdax/easybill)
+[![Total Downloads](https://poser.pugx.org/divdax/easybill/downloads?format=flat-square)](https://packagist.org/packages/divdax/easybill)
 [![StyleCI](https://github.styleci.io/repos/90948270/shield?branch=master)](https://github.styleci.io/repos/90948270)
+[![License](https://poser.pugx.org/divdax/easybill/license?format=flat-square)](https://packagist.org/packages/divdax/easybill)
 
 **Unofficial** Laravel Package to use the [easybill.de REST API](https://www.easybill.de/api).
 
