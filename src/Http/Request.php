@@ -13,6 +13,7 @@ class Request
     {
         $this->client = new Client([
             'base_uri' => $api_endpoint,
+            'verify'   => false,
             'headers'  => [
                 'Authorization' => 'Bearer ' . $api_key,
             ],
