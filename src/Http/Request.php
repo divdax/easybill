@@ -37,7 +37,7 @@ class Request
         return $response;
     }
 
-    public function get($url, $attributes = null)
+    public function get($url, $attributes = [])
     {
         $params = $attributes
             ? '?' . $this->build_url_query($attributes)
@@ -48,21 +48,21 @@ class Request
         return $this->interceptResponse($response);
     }
 
-    public function post($url, $attributes = null)
+    public function post($url, $attributes = [])
     {
         $response = $this->client->post($url, $attributes);
 
         return $this->interceptResponse($response);
     }
 
-    public function put($url, $attributes = null)
+    public function put($url, $attributes = [])
     {
         $response = $this->client->put($url, $attributes);
 
         return $this->interceptResponse($response);
     }
 
-    public function delete($url, $attributes = null)
+    public function delete($url, $attributes = [])
     {
         $response = $this->client->delete($url, $attributes);
 
